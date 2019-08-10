@@ -1,0 +1,29 @@
+0,SALUDO,*,*,hola,nivel0.aiml
+0,^ HOLA ^,*,*,<srai> saludo </srai>,nivel0.aiml
+0,^ QUE TAL ^,*,*,<srai> saludo </srai> #Comma bien#Comma y usted?,nivel0.aiml
+0,^ BIEN,*,*,me alegro,nivel0.aiml
+0,^ HABLAME ^ DE TI ^,*,*,Me llamo Álvaro #Comma tengo 20 años y estoy estudiando#Newline  un doble grado en ingeniería informática y matemáticas en Granada.#Newline  Estoy cursando mi tercer año y espero coger inteligencia artificial#Newline  como especialidad el año proximo.,nivel0.aiml
+0,^ QUE ^ CONTAR [SOBRE DE] TI,*,*,<srai> hablame un poco de ti </srai>,nivel0.aiml
+0,CUAL ES TU MAYOR [DEFECTO FALLO],*,*,Mi mayor defecto es que no puedo desconectar#Newline  de las cosas que me rondan la cabeza.,nivel0.aiml
+0,^ MENOS TE GUSTA [DE SOBRE] TI,*,*,<srai> cual es tu mayor defecto </srai>,nivel0.aiml
+0,QUE ASPECTOS NO TE GUST+ ^ JEFE,*,*,Que no se comprometiera con el proyecto que#Newline  estamos trabajando,nivel0.aiml
+0,(^ ODIAS ^ JEFE) (^ NO SOPORTAS ^ JEFE),*,*,<srai> que aspectos no te gustan de un jefe </srai>,nivel0.aiml
+0,CUALES SON TUS [TRES 3] (MAYORES) (MEJORES)   [VIRTUDES ASPECTOS],*,*,soy una persona capaz de dar soluciones a#Newline  problemas de forma rapida#Comma pero a la vez intento actualizar#Newline  mis soluciones para que sean lo mejor posible a posteriori y#Newline  me gusta estar en constante aprendizaje,nivel0.aiml
+0,^ PREP+ PARA [REALIZAR DESEMPENIAR] ^ [PUESTO EMPLEO],*,*,Me considero preparado para la mayoría de items#Newline  pero para los demás estoy dispuesto a darlo todo de mi para#Newline  aprender lo máximo posible.,nivel0.aiml
+0,^ EXPERIENCIA ^ REALIZ+ ^ PROYECTOS EN [EQUIPO EQUIPOS]   (DE TRABAJO),*,*,Sinceramente#Comma acabo de salir de la universidad#Newline  pero si es verdad que en la carrera nos han insistido mucho#Newline  con el trabajo en equipo. Y todos los semestres hemos realizado#Newline  trabajos grupales de grandes proyectos.,nivel0.aiml
+0,^ REALIZ+ ^ QUE NO FUERA ^ ESPECIALIDAD,*,*,Si#Comma siempre que me guste lo que vaya a hacer.,nivel0.aiml
+0,^ IMPORT+ ^ QUE NO FUERA ^ ESPECIALIDAD,*,*,<srai> Realizarias un trabajo que no fuera con#Newline    tu especialidad </srai>,nivel0.aiml
+0,^ DESPLAZ+ ^ A OTROS LUGARES ^,*,*,Si#Comma tengo pareja pero no una familia#Newline  que tenga raíces donde vivo.,nivel0.aiml
+0,^ DESPLAZ+ ^ A OTRA CIUDAD ^,*,*,<srai>Te desplazarias de manera ocasional#Newline    a otros lugares</srai>,nivel0.aiml
+0,^ PERSONA CREATIVA ^,*,*,Soy una persona creativa porque siempre me#Newline  ha gustado hacer cosas que no hagan los demas,nivel0.aiml
+0,^ EXPECTATIVAS TIENES * ESTE [TRABAJO EMPLEO],*,*,Me parece un puesto con mucha proyección para#Newline  crecer dentro de la empresa.,nivel0.aiml
+0,^ ESPERAS CONSEGUIR * ESTE [TRABAJO EMPLEO],*,*,<srai>expectativas tienes de este trabajo</srai>,nivel0.aiml
+0,^ TRABAJOS * ESTA TEMATICA,*,*,No he tenido ningún empleo con esta temática#Newline  pero eso hace que tenga más ganas.,nivel0.aiml
+0,^ LLEV+ (EL) TRABAJO A CASA,*,*,No me gusta llevarme el trabajo a casa salvo en#Newline  casos excepcionales#Comma porque creo que para trabajar mejores#Newline  es necesario el descanso.,nivel0.aiml
+0,^ ASPIRACIONES SALARIALES ^,*,*,Mis aspiraciones salariales son sobre 30000 euros#Newline  anuales,nivel0.aiml
+0,^ SALARIO ESPER+ ^,*,*,<srai> aspiraciones salariales</srai>,nivel0.aiml
+0,^ [VES IMAGINAS] ^ [CINCO 5] ANIOS,*,*,dentro de 5 años me veo trabajando en la empresa#Newline  y quizás con un puesto superior.,nivel0.aiml
+0,^ NO TIENES EXPERIENCIA ^ [PUESTO EMPLEO TRABAJO] ^,*,*,No tengo experiencia#Comma pero tengo muchas ganas#Newline  de empezar con mi primer empleo y podre todo lo Queesté en mi mano#Newline  para que vaya bien.,nivel0.aiml
+0,^ SAB+ ^ EMPRESA Y EL PUESTO DE TRABAJO ^,*,*,Me gusta mucho y he oido hablar del proyecto#Newline  que trabajais y el puesto he visto que se trata de justo lo#Newline  que me interesa.,nivel0.aiml
+0,^ [HACES DECIDES PLANTEAS] ^ TU JEFE NO TIENE LA RAZON,*,*,Intentaría hablar con él en privado pero#Newline  siempre respetando su autoridad.,nivel0.aiml
+0,^ ESCOG+ ^ TI,*,*,llevo preparandome durante 5 años estudiando#Newline  mucho y creo que no os arrepentireis de darme esta oportunidad#Newline  porque tengo muchas ganas de empezar en algo diferente.,nivel0.aiml

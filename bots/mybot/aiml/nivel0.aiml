@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!--Saludo-->
+<category>
+  <pattern> saludo </pattern>
+  <template> hola </template>
+</category>
+
+<category>
+  <pattern> ^ hola  ^ </pattern>
+  <template> <srai> saludo </srai> </template>
+</category>
+
+<category>
+  <pattern> ^ que tal ^ </pattern>
+  <template> <srai> saludo </srai> , bien, y usted?</template>
+</category>
+
+<category>
+  <pattern> ^ bien  </pattern>
+  <template> me alegro</template>
+</category>
+
+<!--1. Háblame un poco de ti-->
+<category>
+  <pattern> ^ hablame ^ de ti ^ </pattern>
+  <template> Me llamo Álvaro , tengo 20 años y estoy estudiando
+  un doble grado en ingeniería informática y matemáticas en Granada.
+  Estoy cursando mi tercer año y espero coger inteligencia artificial
+  como especialidad el año proximo.</template>
+</category>
+
+<category>
+  <pattern> ^ que ^ contar [sobre de] ti  </pattern>
+  <template> <srai> hablame un poco de ti </srai> </template>
+</category>
+
+<!--2.Cúal es tu mayor defecto-->
+
+<category>
+  <pattern> cual es tu mayor [defecto fallo]</pattern>
+  <template> Mi mayor defecto es que no puedo desconectar
+  de las cosas que me rondan la cabeza.</template>
+</category>
+
+<category>
+  <pattern> ^ menos te gusta [de sobre] ti </pattern>
+  <template> <srai> cual es tu mayor defecto </srai> </template>
+</category>
+
+<!--3.Que aspectos no te gustan de un jefe-->
+
+<category>
+  <pattern> Que aspectos no te gust+ ^ jefe </pattern>
+  <template> Que no se comprometiera con el proyecto que
+  estamos trabajando</template>
+</category>
+
+<category>
+  <pattern> (^ odias ^ jefe) (^ no soportas ^ jefe)</pattern>
+  <template> <srai> que aspectos no te gustan de un jefe </srai> </template>
+</category>
+
+<!--4.Cuales son tus 3 mayores virtudes-->
+
+<category>
+  <pattern> cuales son tus [tres 3] (mayores) (mejores)
+    [virtudes aspectos] </pattern>
+  <template> soy una persona capaz de dar soluciones a
+  problemas de forma rapida, pero a la vez intento actualizar
+  mis soluciones para que sean lo mejor posible a posteriori y
+  me gusta estar en constante aprendizaje</template>
+</category>
+
+<!--5. Te consideras preparado para desempeñar las funciones
+de este puesto-->
+
+<category>
+  <pattern> ^ prep+ para [realizar desempeniar] ^ [puesto empleo]</pattern>
+  <template> Me considero preparado para la mayoría de items
+  pero para los demás estoy dispuesto a darlo todo de mi para
+  aprender lo máximo posible. </template>
+</category>
+
+<!--6. Tienes experiencia en la realizacion de proyectos en equipos
+de trabajo.-->
+
+<category>
+  <pattern> ^ experiencia ^ realiz+ ^ proyectos en [equipo equipos]
+    (de trabajo) </pattern>
+  <template> Sinceramente, acabo de salir de la universidad
+  pero si es verdad que en la carrera nos han insistido mucho
+  con el trabajo en equipo. Y todos los semestres hemos realizado
+  trabajos grupales de grandes proyectos.</template>
+</category>
+
+<!--7. Realizarias un trabajo que no fuera con tu especialidad.-->
+
+<category>
+  <pattern> ^ realiz+ ^ que no fuera ^ especialidad </pattern>
+  <template> Si, siempre que me guste lo que vaya a hacer.</template>
+</category>
+
+<category>
+  <pattern> ^ import+ ^ que no fuera ^ especialidad </pattern>
+  <template> <srai> Realizarias un trabajo que no fuera con
+    tu especialidad </srai> </template>
+</category>
+
+<!--8. Te desplazarias de manera ocasional a otros lugares.-->
+
+<category>
+  <pattern> ^ desplaz+ ^ a otros lugares ^ </pattern>
+  <template> Si, tengo pareja pero no una familia
+  que tenga raíces donde vivo. </template>
+</category>
+
+<category>
+  <pattern> ^ desplaz+ ^ a otra ciudad ^ </pattern>
+  <template> <srai>Te desplazarias de manera ocasional
+    a otros lugares</srai> </template>
+</category>
+
+<!--9. Te consideras una persona creativa.-->
+
+<category>
+  <pattern> ^ persona creativa ^</pattern>
+  <template> Soy una persona creativa porque siempre me
+  ha gustado hacer cosas que no hagan los demas </template>
+</category>
+
+<!--10. Que expectativas tienes de este trabajo-->
+
+<category>
+  <pattern> ^ expectativas tienes * este [trabajo empleo] </pattern>
+  <template> Me parece un puesto con mucha proyección para
+  crecer dentro de la empresa. </template>
+</category>
+
+<category>
+  <pattern> ^ esperas conseguir * este [trabajo empleo] </pattern>
+  <template> <srai>expectativas tienes de este trabajo</srai> </template>
+</category>
+
+<!--11. Que trabajos has tenido en esta tematica-->
+
+<category>
+  <pattern> ^ trabajos * esta tematica </pattern>
+  <template> No he tenido ningún empleo con esta temática
+  pero eso hace que tenga más ganas. </template>
+</category>
+
+<!--12. Normalmente te llevas el trabajo a casa-->
+
+<category>
+  <pattern> ^ llev+ (el) trabajo a casa </pattern>
+  <template> No me gusta llevarme el trabajo a casa salvo en
+  casos excepcionales, porque creo que para trabajar mejores
+  es necesario el descanso.</template>
+</category>
+
+<!--13. Cuales son tus aspiraciones salariales-->
+
+<category>
+  <pattern> ^ aspiraciones salariales ^ </pattern>
+  <template> Mis aspiraciones salariales son sobre 30000 euros
+  anuales</template>
+</category>
+
+<category>
+  <pattern> ^ salario esper+ ^ </pattern>
+  <template> <srai> aspiraciones salariales</srai> </template>
+</category>
+
+<!--14. Donde te ves dentro de cinco años-->
+
+<category>
+  <pattern> ^ [ves imaginas] ^ [cinco 5] anios </pattern>
+  <template> dentro de 5 años me veo trabajando en la empresa
+  y quizás con un puesto superior.</template>
+</category>
+
+<!--15. No tienes experiencia para el puesto a desempeñar-->
+
+<category>
+  <pattern> ^ no tienes experiencia ^ [puesto empleo trabajo] ^ </pattern>
+  <template> No tengo experiencia, pero tengo muchas ganas
+  de empezar con mi primer empleo y podre todo lo Queesté en mi mano
+  para que vaya bien.</template>
+</category>
+
+<!--16. Que sabes de la empresa y el puesto de trabajo-->
+
+<category>
+  <pattern> ^ sab+ ^ empresa y el puesto de trabajo ^ </pattern>
+  <template> Me gusta mucho y he oido hablar del proyecto
+  que trabajais y el puesto he visto que se trata de justo lo
+  que me interesa.</template>
+</category>
+
+<!--17. Que haces cuando consideras que tu jefe no tiene
+la razón-->
+
+<category>
+  <pattern> ^ [haces decides planteas] ^ tu jefe no tiene la razon </pattern>
+  <template> Intentaría hablar con él en privado pero
+  siempre respetando su autoridad.</template>
+</category>
+
+<!--18. Por que deberiamos escogerte a ti-->
+
+<category>
+  <pattern> ^ escog+ ^ ti </pattern>
+  <template> llevo preparandome durante 5 años estudiando
+  mucho y creo que no os arrepentireis de darme esta oportunidad
+  porque tengo muchas ganas de empezar en algo diferente.</template>
+</category>
+
+
+
+</aiml>

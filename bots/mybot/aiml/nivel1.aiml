@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Sinopsis -->
+
+<category>
+  <pattern> De que va (la serie) <set>netflix</set> </pattern>
+  <template>
+    <srai>decode <map><name><star/></name>sinopsis</map></srai>
+    <think> <set name="topic">unknown</set> </think>
+  </template>
+</category>
+
+<category>
+  <pattern> De que va (la serie) <set>primevideo</set> </pattern>
+  <template>
+    <srai>decode <map><name><star/></name>sinopsis</map></srai>
+    <think> <set name="topic">unknown</set> </think>
+  </template>
+</category>
+
+<category>
+  <pattern> De que va (la serie) * </pattern>
+  <template>
+    <think> <set name="serie"> <star/> </set> </think>
+    La serie <star/> no está en el catálogo, Quieres añadirla?.
+    <think> <set name="topic">decision_aniade_serie</set> </think>
+  </template>
+</category>
+
+<!--dime genero -->
+
+<category>
+  <pattern> de que genero es (la serie) <set>netflix</set> </pattern>
+  <template>
+    <srai>ANIADEY <srai>decode_fields <map><name><star/></name>genero</map></srai></srai>
+    <think> <set name="topic">unknown</set> </think>
+  </template>
+</category>
+
+<category>
+  <pattern> de que genero es (la serie) <set>primevideo</set> </pattern>
+  <template>
+    <srai>decode <map><name><star/></name>genero</map></srai>
+    <think> <set name="topic">unknown</set> </think>
+  </template>
+</category>
+
+<category>
+  <pattern> de que genero es (la serie) * </pattern>
+  <template>
+    <think> <set name="serie"> <star/> </set> </think>
+    La serie <star/> no está en el catálogo, Quieres añadirla?.
+    <think> <set name="topic">decision_aniade_serie</set> </think>
+  </template>
+</category>
+
+<!--dime web -->
+
+<category>
+  <pattern> dime la web de (la serie) <set>netflix</set> </pattern>
+  <template>
+    <think><set var="tmp"><srai>decode <map><name><star/></name>web</map></srai></set></think>
+    <condition var="tmp">
+      <li value="unknown">
+        No hay web definida, dime: Anadir web a la serie ... ; si quieres añadir una.
+      </li>
+      <li>
+        <get var="tmp"/>
+      </li>
+    </condition>
+    <think> <set name="topic">unknown</set> </think>
+
+  </template>
+</category>
+
+<category>
+  <pattern> dime la web de (la serie) <set>primevideo</set> </pattern>
+  <template>
+    <think><set var="tmp"><srai>decode <map><name><star/></name>web</map></srai></set></think>
+    <condition var="tmp">
+      <li value="unknown">
+        No hay web definida, dime: Anadir web a la serie ... ; si quieres añadir una.
+      </li>
+      <li>
+        <get var="tmp"/>
+      </li>
+    </condition>
+    <think> <set name="topic">unknown</set> </think>
+
+  </template>
+</category>
+
+<category>
+  <pattern> dime la web de (la serie) * </pattern>
+  <template>
+    <think> <set name="serie"> <star/> </set> </think>
+    La serie <star/> no está en el catálogo, Quieres añadirla?.
+    <think> <set name="topic">decision_aniade_serie</set> </think>
+  </template>
+</category>
+
+<!-- Añado serie? -->
+
+<topic name ="decision_aniade_serie">
+
+<category>
+  <pattern>[si si,] ^ incluyela en el catalogo de *</pattern>
+  <template>
+    ok, crea en la carpeta maps un archivo llamado <get name="serie"/>.txt y
+    aniade en la carpeta set en <star index="2"/>.txt al final del archivo
+    <get name="serie"/>.Cuando hayas terminado reiniciame y al volver, pideme
+    que anada la serie <get name="serie"/>.
+  </template>
+</category>
+
+<category>
+  <pattern>[no no,] ^</pattern>
+  <template>
+  ok
+  <think> <set name="topic">unknown</set> </think>
+  </template>
+</category>
+
+</topic>
+
+<!-- Añade la serie -->
+
+<category>
+  <pattern>Anade la serie <set>netflix</set> </pattern>
+  <template>
+    <think> <set name="serie"> <star/> </set> </think>
+    perfecto, te voy a preguntar datos sobre la serie <star/>.
+    Indicame a que género pertenece.
+    <think> <set name="topic">anade_serie</set> </think>
+  </template>
+</category>
+
+<category>
+  <pattern>Anade la serie <set>primevideo</set> </pattern>
+  <template>
+    <think> <set name="serie"> <star/> </set> </think>
+    perfecto, te voy a preguntar datos sobre la serie <star/>.
+    Indicame a que género pertenece.
+    <think> <set name="topic">anade_serie</set> </think>
+  </template>
+</category>
+
+<category>
+  <pattern>Anade la serie * </pattern>
+  <template>
+    ok, crea en la carpeta maps un archivo llamado <star/>.txt y
+    aniade en la carpeta set en NombreDelCatalogo.txt al final del archivo
+    <star/>.Cuando hayas terminado reiniciame y al volver, pideme
+    que anada la serie <star/>.
+  </template>
+</category>
+
+<topic name ="anade_serie">
+
+<!--genero-->
+<category>
+  <pattern>*</pattern>
+  <template>
+    <think>
+      <set var="genero"><srai>decodecomaey <star/></srai></set>
+      <set var="genero"><srai>code_fields <get var="genero"/></srai></set>
+    </think>
+    <addtomap>
+      <name><get name="serie"/></name>
+      <key>genero</key>
+      <value><get var="genero"/></value>
+    </addtomap>
+    de que va la serie
+  </template>
+</category>
+
+<category>
+  <pattern>*</pattern>
+  <that> de que va la serie </that>
+  <template>
+    <addtomap>
+      <name><get name="serie"/></name>
+      <key>sinopsis</key>
+      <value><srai>code <star/></srai></value>
+    </addtomap>
+    dime la lista de idiomas en los que está disponible el
+    audio de la serie
+  </template>
+</category>
+
+<category>
+  <pattern>*</pattern>
+  <that> dime la lista de idiomas en los que está disponible el
+  audio de la serie </that>
+  <template>
+    <think>
+      <set var="idiomas"><srai>decodecomaey <star/></srai></set>
+      <set var="idiomas"><srai>code_fields <get var="idiomas"/></srai></set>
+    </think>
+    <addtomap>
+      <name><get name="serie"/></name>
+      <key>idiomas</key>
+      <value><get var="idiomas"/></value>
+    </addtomap>
+    dime la lista de subtitulos en los que está disponible la serie
+  </template>
+</category>
+
+<category>
+  <pattern>*</pattern>
+  <that> dime la lista de subtitulos en los que está disponible la serie</that>
+  <template>
+    <think>
+      <set var="subtitulos"><srai>decodecomaey <star/></srai></set>
+      <set var="subtitulos"><srai>code_fields <get var="subtitulos"/></srai></set>
+    </think>
+    <addtomap>
+      <name><get name="serie"/></name>
+      <key>subtitulos</key>
+      <value><get var="subtitulos"/></value>
+    </addtomap>
+    si conoces una direccion web de la serie indicamela
+  </template>
+</category>
+
+
+<category>
+  <pattern>*</pattern>
+  <that> si conoces una direccion web de la serie indicamela</that>
+  <template>
+    <think><set var="sino"><star/></set></think>
+    <condition var="sino">
+			<li value="no lo se">
+        <think> <set name="topic">unknown</set> </think>
+				ya he creado la informacion basica de la serie, si quieres añadir capitulos me lo dices
+			</li>
+      <li>
+        <addtomap>
+          <name><get name="serie"/></name>
+          <key>web</key>
+          <value><star/></value>
+        </addtomap>
+        <think> <set name="topic">unknown</set> </think>
+        ya he creado la informacion basica de la serie, si quieres añadir capitulos me lo dices
+      </li>
+    </condition>
+  </template>
+</category>
+
+</topic>
+
+<category>
+  <pattern>Anadir web a la serie <set>netflix</set></pattern>
+  <template>
+    <think><set name="serie"><star/></set></think>
+    dime la web
+  </template>
+</category>
+
+<category>
+  <pattern>Anadir web a la serie <set>primevideo</set></pattern>
+  <template>
+    <think><set name="serie"><star/></set></think>
+    dime la web
+  </template>
+</category>
+
+<category>
+  <pattern>*</pattern>
+  <that>dime la web</that>
+  <template>
+    <addtomap>
+      <name><get name="serie"/></name>
+      <key>web</key>
+      <value><star/></value>
+    </addtomap>
+    web añadida a la serie <get name="serie"/>
+  </template>
+</category>
+
+<category>
+  <pattern>Anadir web a la serie *</pattern>
+  <template>
+    La serie no esta en ninguna plataforma, quieres añadirla?
+    <think> <set name="topic">decision_aniade_serie</set> </think>
+  </template>
+</category>
+
+
+
+<!-- Añadir capitulo-->
+
+<category>
+  <pattern>Introduce un nuevo capitulo de la temporada <set>number</set> de *</pattern>
+  <template>
+    <think>
+      <set name="temporada">temporada<star/></set>
+      <set name="serie"><star index="2"/></set>
+    </think>
+    Dime el titulo del capitulo
+  </template>
+</category>
+
+<category>
+  <pattern>*</pattern>
+  <that>Dime el titulo del capitulo</that>
+  <template>
+    <think>
+      <set name="titcap"><srai>code <star/></srai></set>
+    </think>
+      Dime la duracion del capitulo
+  </template>
+</category>
+
+<category>
+  <pattern><set>number</set></pattern>
+  <that>Dime la duracion del capitulo</that>
+  <template>
+    <think>
+      <set var="durcap"><star/></set>
+      <set var="cond"><map><name><get name="serie"/></name><get name="temporada"/></map></set>
+    </think>
+    <condition var="cond">
+      <li value="unknown">
+        <addtomap>
+          <name><get name="serie"/></name>
+          <key><get name="temporada"/></key>
+          <value><get name="titcap"/>@<get var="durcap"/></value>
+        </addtomap>
+      </li>
+      <li>
+        <modifymap>
+          <name><get name="serie"/></name>
+          <key><get name="temporada"/></key>
+          <value><get var="cond"/>@<get name="titcap"/>@<get var="durcap"/></value>
+        </modifymap>
+      </li>
+    </condition>
+  </template>
+</category>
+
+
+
+
+
+
+
+
+
+  </aiml>
